@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deep-red: #8B0000;
+  --color-gold: #FFD700;
+  --color-sand: #F5E1C8;
+  --color-jowar: #F4D03F;
+  --color-soil: #A93226;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-sand text-deep-red font-sans overflow-x-hidden;
+    padding-bottom: env(safe-area-inset-bottom);
+    background-image: radial-gradient(circle at 2px 2px, rgba(139, 0, 0, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+@layer components {
+  .ilkal-border {
+    background-color: #8B0000;
+    background-image: 
+      linear-gradient(90deg, #FFD700 2px, transparent 2px),
+      linear-gradient(0deg, #FFD700 2px, transparent 2px);
+    background-size: 20px 20px;
+    height: 30px;
+    width: 100%;
+    border-bottom: 3px solid #FFD700;
+    border-top: 3px solid #FFD700;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+  }
+
+  .temple-pillar {
+    background: linear-gradient(to right, #5D4037, #8D6E63, #5D4037);
+    width: 40px;
+    height: 100%;
+    position: relative;
+    @apply hidden md:block sticky top-0;
+    border-left: 2px solid #FFD700;
+    border-right: 2px solid #FFD700;
+  }
+
+  .temple-pillar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255, 215, 0, 0.1) 40px, rgba(255, 215, 0, 0.1) 42px);
+  }
+
+  .glass-card {
+    @apply bg-white/30 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg;
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Naada Vedike",
+  "description": "A cultural digital platform for North Karnataka combining music, videos, debates, and a startup directory.",
+  "requestFramePermissions": ["camera", "microphone"]
+}
